@@ -1,0 +1,42 @@
+<div class="section-head">
+
+    <div class="header">
+
+        Manage Answer Sets
+
+    </div>
+
+    <div class="buttons">
+
+        <button mat-raised-button
+                color="primary"
+                (click)="settingsUsersDialogService.open()">
+
+            Add Answer Set
+
+        </button>
+
+    </div>
+
+</div>
+
+<ngxux-datatable (sort)="onSortChange($event)"
+                 [columns]="[{
+
+        name: 'Username'
+
+    }, {
+
+        name: 'Role'
+
+    }, {
+
+        name: 'Last Login'
+
+    }]"></ngxux-datatable>
+
+<ng-template #connectionType let-column="column" let-row="row" let-value="value">
+
+    {{ row.connectionType.name }}
+
+</ng-template>

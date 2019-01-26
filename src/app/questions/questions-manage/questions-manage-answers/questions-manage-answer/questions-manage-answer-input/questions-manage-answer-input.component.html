@@ -1,0 +1,21 @@
+<form [formGroup]="group">
+
+    <mat-checkbox [formControl]="group.get('selected')"></mat-checkbox>
+
+    <mat-form-field floatLabel="always">
+
+        <input matInput
+               placeholder="Value"
+               formControlName="value">
+
+    </mat-form-field>
+
+    <mat-form-field floatLabel="always" style="width: 50px;">
+
+        <input matInput
+               placeholder="Score"
+               formControlName="score">
+
+    </mat-form-field>
+
+</form>

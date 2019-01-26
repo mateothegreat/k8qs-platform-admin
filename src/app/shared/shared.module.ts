@@ -12,12 +12,14 @@ import { NgxuxMatToolbarModule }         from '@ngxux/ngxux-mat-toolbar';
 import { NgxuxMatVerticalToolbarModule } from '@ngxux/ngxux-mat-vertical-toolbar';
 import { AutofocusDirective }            from '../_lib/AutofocusDirective';
 import { MaterialModule }                from './material/material.module';
+import { OkIconComponent }               from './ok-icon/ok-icon.component';
 
 @NgModule({
 
     declarations: [
 
         AutofocusDirective,
+        OkIconComponent,
 
     ],
 
@@ -25,6 +27,7 @@ import { MaterialModule }                from './material/material.module';
 
         CommonModule,
         ReactiveFormsModule,
+
 
         NgProgressModule,
         NgProgressHttpModule,
@@ -58,6 +61,9 @@ import { MaterialModule }                from './material/material.module';
         NgxuxMatToolbarModule,
         NgxuxMatTableModule,
         NgxuxMatVerticalToolbarModule,
+
+        OkIconComponent,
+
 
     ]
 

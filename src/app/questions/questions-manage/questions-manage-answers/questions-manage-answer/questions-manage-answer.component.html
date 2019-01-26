@@ -1,0 +1,9 @@
+<div class="wrapper">
+
+    <app-questions-manage-answer-boolean *ngIf="type === 'BOOLEAN'"
+                                         [group]="group"></app-questions-manage-answer-boolean>
+
+    <app-questions-manage-answer-input *ngIf="type === 'SINGLE_CHOICE' || type === 'MULTIPLE_CHOICE'"
+                                       [group]="group"></app-questions-manage-answer-input>
+
+</div>

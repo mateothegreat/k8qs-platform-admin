@@ -1,0 +1,38 @@
+<ngxux-mat-header-nav title="Manage Questions"
+                      (buttonClick)="onHeaderNavButtonClick($event)"
+                      [buttons]="[
+
+                                        {
+
+                                            label: 'Add Question'
+
+                                        }
+
+                                    ]"
+
+                      [tabs]="[
+
+                                    {
+
+                                        label: 'Questions',
+                                        path: '/questions/search'
+
+                                    }, {
+
+                                        label: 'Categories',
+                                        path: '/questions/categories'
+
+                                    }, {
+
+                                        label: 'Answer Sets',
+                                        path: '/questions/answer-sets'
+
+                                    }
+
+                                ]"></ngxux-mat-header-nav>
+
+<div class="table">
+
+    <router-outlet></router-outlet>
+
+</div>

@@ -11,6 +11,7 @@ import { JwtInterceptor }                      from './_lib/JwtInterceptor';
 import { AppComponent }                        from './app.component';
 import { HomeModule }                          from './home/home.module';
 import { LoginModule }                         from './login/login.module';
+import { QuestionsModule }                     from './questions/questions.module';
 import { SettingsModule }                      from './settings/settings.module';
 import { SharedModule }                        from './shared/shared.module';
 
@@ -32,6 +33,7 @@ import { SharedModule }                        from './shared/shared.module';
         LoginModule,
         SettingsModule,
         SharedModule,
+        QuestionsModule,
 
         NgProgressModule.withConfig({
 

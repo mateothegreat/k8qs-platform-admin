@@ -1,0 +1,41 @@
+<div class="section-head">
+
+    <div class="header">
+
+        Manage Question Categories
+
+    </div>
+
+    <div class="buttons">
+
+        <button mat-raised-button
+                (click)="settingsUsersDialogService.open()">
+
+            Add Category
+
+        </button>
+
+    </div>
+
+</div>
+
+<ngxux-datatable (sort)="onSortChange($event)"
+                 [columns]="[{
+
+        name: 'Category Name'
+
+    }, {
+
+        name: 'Description'
+
+    }, {
+
+        name: 'Questions'
+
+    }]"></ngxux-datatable>
+
+<ng-template #connectionType let-column="column" let-row="row" let-value="value">
+
+    {{ row.connectionType.name }}
+
+</ng-template>

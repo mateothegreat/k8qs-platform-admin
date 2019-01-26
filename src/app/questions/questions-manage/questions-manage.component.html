@@ -1,0 +1,83 @@
+<div class="wrapper p-20">
+
+    <mat-accordion>
+
+        <mat-expansion-panel expanded="true">
+
+            <mat-expansion-panel-header>
+
+                <mat-panel-title>
+
+                    Question Details
+
+                </mat-panel-title>
+
+                <mat-panel-description>
+
+                    {{ questionsManageService.formGroup.get('name').value }}
+
+                </mat-panel-description>
+
+            </mat-expansion-panel-header>
+
+            <app-questions-manage-details></app-questions-manage-details>
+
+            <div class="down-arrow">
+
+                <mat-icon>arrow_downward</mat-icon>
+
+            </div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel expanded="true">
+
+            <mat-expansion-panel-header>
+
+                <mat-panel-title>
+
+                    Answers
+
+                </mat-panel-title>
+
+                <mat-panel-description>
+
+                    {{ questionsManageService.formGroup.get('name').value }}
+
+                </mat-panel-description>
+
+            </mat-expansion-panel-header>
+
+            <app-questions-manage-answers></app-questions-manage-answers>
+
+            <div class="down-arrow">
+
+                <mat-icon>arrow_downward</mat-icon>
+
+            </div>
+
+        </mat-expansion-panel>
+
+    </mat-accordion>
+
+    <div class="buttons">
+
+        <button *ngIf="questionsManageService.question"
+                (click)="onDeleteClick()"
+                mat-raised-button color="warn">
+
+            Delete
+
+        </button>
+
+        <button (click)="onButtonClick()"
+                [disabled]="!questionsManageService.formGroup.valid"
+                mat-raised-button color="accent">
+
+            Save
+
+        </button>
+
+    </div>
+
+</div>

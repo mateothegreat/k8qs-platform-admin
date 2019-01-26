@@ -26,6 +26,7 @@ export class AppComponent {
         ngxuxMatVerticalToolbarService.leftMenuItems = [
 
             new NgxuxMatVerticalToolbarItem({ icon: 'home', path: '/home', tooltip: 'Go home!' }),
+            new NgxuxMatVerticalToolbarItem({ icon: 'help', path: '/questions', tooltip: 'Manage Questions' }),
             new NgxuxMatVerticalToolbarItem({ icon: 'settings', path: '/settings', tooltip: 'Go settings!' }),
 
         ];

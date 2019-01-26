@@ -1,0 +1,81 @@
+@import 'abbreviations';
+
+table {
+    
+    width: 100%;
+    
+}
+
+.section-title {
+    
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    
+    &:first-line {
+        
+        font-size: 22px;
+        
+    }
+    
+}
+
+.down-arrow {
+    
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    justify-content: center;
+    
+}
+
+.remove {
+    
+    margin-left: 10px;
+    
+    mat-icon {
+        
+        font-size: 14px;
+        cursor: pointer;
+        
+        &:hover {
+            
+            color: red;
+            
+        }
+        
+    }
+    
+}
+
+.section-head {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    
+    .header {
+        display: flex;
+        
+        font-size: 20px;
+        align-items: center;
+        
+    }
+    
+    .buttons {
+        
+        display: flex;
+        align-items: center;
+        
+        justify-content: flex-end;
+        
+    }
+    
+}
+
+mat-form-field {
+    
+    width: 99%;
+    margin: 10px;
+    
+}
