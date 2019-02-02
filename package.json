@@ -27,6 +27,7 @@
         "@ngx-progressbar/http": "^5.3.1",
         "@ngxux/common": "0.0.6",
         "@ngxux/datatable": "0.0.5",
+        "@ngxux/details-dialog": "0.0.6",
         "@ngxux/ngxux-mat-dialog": "0.0.6",
         "@ngxux/ngxux-mat-header-nav": "0.0.6",
         "@ngxux/ngxux-mat-login": "0.0.7",

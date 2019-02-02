@@ -5,4 +5,3 @@ export const environment = {
     API_BASE: 'https://api.k8qs.com'
 
 };
-

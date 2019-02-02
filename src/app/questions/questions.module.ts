@@ -1,6 +1,7 @@
 import { CommonModule }                          from '@angular/common';
 import { NgModule }                              from '@angular/core';
 import { RouterModule }                          from '@angular/router';
+import { NgxuxDetailsDialogModule }              from '@ngxux/details-dialog';
 import { SharedModule }                          from '../shared/shared.module';
 import { QuestionAnswerSetsComponent }           from './question-answer-sets/question-answer-sets.component';
 import { QuestionCategoriesComponent }           from './question-categories/question-categories.component';
@@ -8,11 +9,11 @@ import { QuestionsManageAnswerBooleanComponent } from './questions-manage/questi
 import { QuestionsManageAnswerInputComponent }   from './questions-manage/questions-manage-answers/questions-manage-answer/questions-manage-answer-input/questions-manage-answer-input.component';
 import { QuestionsManageAnswerComponent }        from './questions-manage/questions-manage-answers/questions-manage-answer/questions-manage-answer.component';
 import { QuestionsManageAnswersComponent }       from './questions-manage/questions-manage-answers/questions-manage-answers.component';
+import { QuestionsManageCategoryComponent }      from './questions-manage/questions-manage-category/questions-manage-category.component';
 import { QuestionsManageDetailsComponent }       from './questions-manage/questions-manage-details/questions-manage-details.component';
 import { QuestionsManageComponent }              from './questions-manage/questions-manage.component';
 import { QuestionsSearchComponent }              from './questions-search/questions-search.component';
 import { QuestionsComponent }                    from './questions.component';
-import { QuestionsManageCategoryComponent } from './questions-manage/questions-manage-category/questions-manage-category.component';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,8 @@ import { QuestionsManageCategoryComponent } from './questions-manage/questions-m
 
         CommonModule,
         SharedModule,
+
+        NgxuxDetailsDialogModule,
 
         RouterModule.forChild([
 
