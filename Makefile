@@ -9,8 +9,8 @@ include .make/Makefile.inc
 
 NS		?= default
 VERSION ?= $(shell git rev-parse HEAD)
-APP     ?= <replace with an application name>
-IMAGE   ?= gcr.io/<replace with a GCP project name>/$(APP):$(VERSION)
+APP     ?= k8exam-platform-ui
+IMAGE   ?= gcr.io/matthewdavis-devops/$(APP):$(VERSION)
 PORT    ?= 80
 
 .PHONY: build
@@ -24,7 +24,7 @@ push:		; docker push $(IMAGE)
 
 kubeme:
 
-	kubectl config use-context <replace with a kubernetes context>
+	kubectl config use-context gke_matthewdavis-devops_us-east1-b_cluster-1
 
 changelog:
 

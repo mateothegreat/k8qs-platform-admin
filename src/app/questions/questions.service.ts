@@ -22,7 +22,7 @@ export class QuestionsService extends APIClient<Question> {
 
     }
 
-    public deleteByUUID(uuid: string): Observable<Question> {
+    public deleteByUUID(uuid: string): Observable<boolean> {
 
         return this.delete(`questions/${ uuid }`);
 

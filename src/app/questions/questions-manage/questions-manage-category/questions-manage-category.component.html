@@ -1,0 +1,35 @@
+<div class="wrapper">
+
+    <form [formGroup]="questionsManageService.formGroup">
+
+        <table>
+
+            <tr>
+
+                <td>
+
+                    <mat-form-field floatLabel="always">
+
+                        <mat-select formControlName="category"
+                                    placeholder="Question Category">
+
+                            <mat-option *ngFor="let category of categories"
+                                        [value]="category">
+
+                                {{ category.name }}
+
+                            </mat-option>
+
+                        </mat-select>
+
+                    </mat-form-field>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </form>
+
+</div>

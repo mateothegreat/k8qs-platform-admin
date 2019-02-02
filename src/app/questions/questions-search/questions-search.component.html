@@ -6,36 +6,40 @@
 
     </div>
 
-    <div class="buttons">
+    <!--<div class="buttons">-->
 
-        <button mat-raised-button
-                (click)="settingsUsersDialogService.open()">
+    <!--<button mat-raised-button-->
+    <!--(click)="settingsUsersDialogService.open()">-->
 
-            Add User
+    <!--Add User-->
 
-        </button>
+    <!--</button>-->
 
-    </div>
+    <!--</div>-->
 
 </div>
 
-<ngxux-datatable (sort)="onSortChange($event)"
-                 [columns]="[{
+<div class="psides-20 rounded">
 
-        name: 'Username'
+    <ngxux-datatable (sort)="onSortChange($event)"
+                     [columns]="[{
 
-    }, {
-
-        name: 'Role'
+        name: 'Name'
 
     }, {
 
-        name: 'Last Login'
+        name: 'Description'
+
+    }, {
+
+        name: 'Type'
 
     }]"></ngxux-datatable>
 
-<ng-template #connectionType let-column="column" let-row="row" let-value="value">
+    <ng-template #connectionType let-column="column" let-row="row" let-value="value">
 
-    {{ row.connectionType.name }}
+        {{ row.connectionType.name }}
 
-</ng-template>
+    </ng-template>
+
+</div>

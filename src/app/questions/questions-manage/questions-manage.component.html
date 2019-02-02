@@ -36,6 +36,34 @@
 
                 <mat-panel-title>
 
+                    Question Category & Tags
+
+                </mat-panel-title>
+
+                <mat-panel-description>
+
+                    {{ questionsManageService.formGroup.get('name').value }}
+
+                </mat-panel-description>
+
+            </mat-expansion-panel-header>
+
+            <app-questions-manage-category></app-questions-manage-category>
+
+            <div class="down-arrow">
+
+                <mat-icon>arrow_downward</mat-icon>
+
+            </div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+
+            <mat-expansion-panel-header>
+
+                <mat-panel-title>
+
                     Answers
 
                 </mat-panel-title>

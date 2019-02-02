@@ -12,6 +12,7 @@ import { QuestionsManageDetailsComponent }       from './questions-manage/questi
 import { QuestionsManageComponent }              from './questions-manage/questions-manage.component';
 import { QuestionsSearchComponent }              from './questions-search/questions-search.component';
 import { QuestionsComponent }                    from './questions.component';
+import { QuestionsManageCategoryComponent } from './questions-manage/questions-manage-category/questions-manage-category.component';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { QuestionsComponent }                    from './questions.component';
         QuestionsManageAnswerBooleanComponent,
         QuestionsManageAnswerInputComponent,
         QuestionAnswerSetsComponent,
-        QuestionCategoriesComponent
+        QuestionCategoriesComponent,
+        QuestionsManageCategoryComponent
 
     ],
 

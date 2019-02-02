@@ -1,5 +1,7 @@
 import { Component }              from '@angular/core';
-import { ActivatedRoute }         from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService }          from 'ngx-toastr';
+import { QuestionsService }       from '../questions.service';
 import { QuestionsManageService } from './questions-manage.service';
 
 @Component({
@@ -10,7 +12,24 @@ import { QuestionsManageService } from './questions-manage.service';
 export class QuestionsManageComponent {
 
     public constructor(public questionsManageService: QuestionsManageService,
-                       private route: ActivatedRoute) {
+                       private questionsService: QuestionsService,
+                       private route: ActivatedRoute,
+                       private router: Router,
+                       private toastrService: ToastrService) {
+
+        route.params.subscribe(params => {
+
+            if (params.uuid) {
+
+                questionsManageService.loadByUUID(params.uuid);
+
+            } else {
+
+                questionsManageService.reset();
+
+            }
+
+        });
 
     }
 
@@ -38,21 +57,21 @@ export class QuestionsManageComponent {
 
     public onDeleteClick(): void {
 
-        // this.mappingManageService.delete().subscribe((result: boolean) => {
-        //
-        //     if (result) {
-        //
-        //         this.toastrService.success('Your mapping has been deleted!');
-        //
-        //         this.router.navigate([ '/mapping/search' ]);
-        //
-        //     } else {
-        //
-        //         this.toastrService.error('Your mapping could not be deleted. Please try again in a moment.');
-        //
-        //     }
-        //
-        // });
+        this.questionsManageService.delete().subscribe((result: boolean) => {
+
+            if (result) {
+
+                this.toastrService.success('Your question has been deleted!');
+
+                this.router.navigate([ '/questions' ]);
+
+            } else {
+
+                this.toastrService.error('Your question could not be deleted. Please try again in a moment.');
+
+            }
+
+        });
 
     }
 

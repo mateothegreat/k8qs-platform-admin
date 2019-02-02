@@ -1,4 +1,4 @@
-<app-questions-manage-answer *ngFor="let group of questionsManageService.formGroup.get('answers').controls"
+<app-questions-manage-answer *ngFor="let group of questionsManageService.formGroup.get('answers')['controls']"
                              [type]="questionsManageService.formGroup.get('type').value"
                              [group]="group"></app-questions-manage-answer>
 

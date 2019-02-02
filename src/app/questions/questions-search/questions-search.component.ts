@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router }                       from '@angular/router';
 import { NgxuxDatatableComponent }      from '@ngxux/datatable';
 import { Pageable }                     from '@ngxux/datatable/lib/Pageable';
 import { Question }                     from '../_lib/Question';
@@ -13,7 +14,8 @@ export class QuestionsSearchComponent implements OnInit {
 
     @ViewChild(NgxuxDatatableComponent) public datatableRef: NgxuxDatatableComponent<Question>;
 
-    public constructor(private questionsService: QuestionsService) {
+    public constructor(private questionsService: QuestionsService,
+                       private router: Router) {
 
     }
 
@@ -25,6 +27,22 @@ export class QuestionsSearchComponent implements OnInit {
 
         });
 
+
+        this.datatableRef.clicks$.subscribe((question: Question) => {
+
+            if (question.uuid) {
+
+                this.router.navigate([ `/questions/manage/${ question.uuid }` ]);
+
+            }
+
+        });
+
+    }
+
+    public onSortChange(e: any): void {
+
     }
 
 }
+
