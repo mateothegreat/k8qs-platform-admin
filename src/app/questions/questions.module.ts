@@ -5,6 +5,7 @@ import { NgxuxDetailsDialogModule }              from '@ngxux/details-dialog';
 import { SharedModule }                          from '../shared/shared.module';
 import { QuestionAnswerSetsComponent }           from './question-answer-sets/question-answer-sets.component';
 import { QuestionCategoriesComponent }           from './question-categories/question-categories.component';
+import { QuestionsCategoriesManageComponent }    from './question-categories/questions-categories-manage/questions-categories-manage.component';
 import { QuestionsManageAnswerBooleanComponent } from './questions-manage/questions-manage-answers/questions-manage-answer/questions-manage-answer-boolean/questions-manage-answer-boolean.component';
 import { QuestionsManageAnswerInputComponent }   from './questions-manage/questions-manage-answers/questions-manage-answer/questions-manage-answer-input/questions-manage-answer-input.component';
 import { QuestionsManageAnswerComponent }        from './questions-manage/questions-manage-answers/questions-manage-answer/questions-manage-answer.component';
@@ -28,7 +29,8 @@ import { QuestionsComponent }                    from './questions.component';
         QuestionsManageAnswerInputComponent,
         QuestionAnswerSetsComponent,
         QuestionCategoriesComponent,
-        QuestionsManageCategoryComponent
+        QuestionsManageCategoryComponent,
+        QuestionsCategoriesManageComponent
 
     ],
 
@@ -56,7 +58,12 @@ import { QuestionsComponent }                    from './questions.component';
                     }, {
 
                         path: 'categories',
-                        component: QuestionCategoriesComponent
+                        component: QuestionCategoriesComponent,
+
+                    }, {
+
+                        path: 'categories/:uuid',
+                        component: QuestionsCategoriesManageComponent
 
                     }, {
 

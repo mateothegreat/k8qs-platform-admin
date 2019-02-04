@@ -1,0 +1,28 @@
+<div class="wrapper p-20">
+
+    <div class="form">
+
+
+    </div>
+
+    <div class="buttons">
+
+        <button *ngIf="questionsCategoriesManageService.category"
+                (click)="onDeleteClick()"
+                mat-raised-button color="warn">
+
+            Delete
+
+        </button>
+
+        <button (click)="onButtonClick()"
+                [disabled]="!questionsCategoriesManageService.formGroup.valid"
+                mat-raised-button color="accent">
+
+            Save
+
+        </button>
+
+    </div>
+
+</div>

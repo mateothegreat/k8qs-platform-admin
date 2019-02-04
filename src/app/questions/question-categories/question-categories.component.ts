@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild }                             from '@angular/core';
+import { Router }                                                   from '@angular/router';
 import { NgxuxDatatableComponent }                                  from '@ngxux/datatable';
 import { Pageable }                                                 from '@ngxux/datatable/lib/Pageable';
 import { NgxuxDetailsDialogDataService, NgxuxDetailsDialogService } from '@ngxux/details-dialog';
 import { ToastrService }                                            from 'ngx-toastr';
 import { Category }                                                 from '../_lib/Category';
-import { CategoriesService }                                        from '../categories.service';
+import { QuestionsCategoriesService }                               from './questions-categories.service';
 
 @Component({
     selector: 'app-question-categories',
@@ -15,16 +16,27 @@ export class QuestionCategoriesComponent implements OnInit {
 
     @ViewChild(NgxuxDatatableComponent) public datatableRef: NgxuxDatatableComponent<Category>;
 
-    public constructor(private categoriesService: CategoriesService,
+    public constructor(private categoriesService: QuestionsCategoriesService,
                        private detailsDialogService: NgxuxDetailsDialogService,
                        private detailsDialogDataService: NgxuxDetailsDialogDataService,
-                       private toastrService: ToastrService) {
+                       private toastrService: ToastrService,
+                       private router: Router) {
 
     }
 
     public ngOnInit() {
 
         this.categoriesService.getPageable().subscribe((pageable: Pageable<Category>) => this.datatableRef.setPage(pageable));
+
+        this.datatableRef.clicks$.subscribe((category: Category) => {
+
+            if (category.uuid) {
+
+                this.router.navigate([ `/questions/categories/${ category.uuid }` ]);
+
+            }
+
+        });
 
     }
 
