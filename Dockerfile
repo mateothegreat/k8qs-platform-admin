@@ -1,6 +1,4 @@
-FROM node:alpine AS builder
-
-RUN apk add --update
+FROM node AS builder
 
 WORKDIR /app
 
