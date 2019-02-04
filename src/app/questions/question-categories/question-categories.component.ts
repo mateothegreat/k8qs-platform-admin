@@ -4,6 +4,7 @@ import { NgxuxDatatableComponent }                                  from '@ngxux
 import { Pageable }                                                 from '@ngxux/datatable/lib/Pageable';
 import { NgxuxDetailsDialogDataService, NgxuxDetailsDialogService } from '@ngxux/details-dialog';
 import { ToastrService }                                            from 'ngx-toastr';
+import { Subscription }                                             from 'rxjs';
 import { Category }                                                 from '../_lib/Category';
 import { QuestionsCategoriesService }                               from './questions-categories.service';
 
@@ -15,6 +16,9 @@ import { QuestionsCategoriesService }                               from './ques
 export class QuestionCategoriesComponent implements OnInit {
 
     @ViewChild(NgxuxDatatableComponent) public datatableRef: NgxuxDatatableComponent<Category>;
+
+    private subscription: Subscription;
+    private subscription2: Subscription;
 
     public constructor(private categoriesService: QuestionsCategoriesService,
                        private detailsDialogService: NgxuxDetailsDialogService,
@@ -46,10 +50,14 @@ export class QuestionCategoriesComponent implements OnInit {
 
     public onAddCategoryClick(): void {
 
-        this.detailsDialogDataService.click$.subscribe((value: Category) => {
+        this.subscription = this.detailsDialogDataService.click$.subscribe((value: Category) => {
 
-            this.categoriesService.create(value).subscribe((category: Category) => {
+            this.subscription.unsubscribe();
 
+            this.subscription2 = this.categoriesService.create(value).subscribe((category: Category) => {
+
+                this.subscription2.unsubscribe();
+                
                 this.categoriesService.getPageable();
 
                 this.detailsDialogService.close();

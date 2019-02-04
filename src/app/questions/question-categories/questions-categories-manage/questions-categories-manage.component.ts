@@ -26,5 +26,9 @@ export class QuestionsCategoriesManageComponent {
 
     }
 
+    public onButtonClick(): void {
+        
+
+    }
 
 }
