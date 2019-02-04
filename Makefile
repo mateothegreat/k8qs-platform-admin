@@ -9,7 +9,7 @@ include .make/Makefile.inc
 
 NS		?= default
 VERSION ?= $(shell git rev-parse HEAD)
-APP     ?= k8exam-platform-ui
+APP     ?= k8exam-platform-admin
 IMAGE   ?= gcr.io/matthewdavis-devops/$(APP):$(VERSION)
 PORT    ?= 80
 
